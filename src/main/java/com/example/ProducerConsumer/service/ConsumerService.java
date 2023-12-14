@@ -2,12 +2,14 @@ package com.example.ProducerConsumer.service;
 
 import com.example.ProducerConsumer.model.UserAudit;
 import com.example.ProducerConsumer.repository.UserAuditRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class ConsumerService {
+
     private final UserAuditRepository userAuditRepository;
 
     public ConsumerService(UserAuditRepository userAuditRepository) {

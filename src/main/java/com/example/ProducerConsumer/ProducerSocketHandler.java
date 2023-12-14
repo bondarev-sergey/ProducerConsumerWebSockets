@@ -36,6 +36,5 @@ public class ProducerSocketHandler extends TextWebSocketHandler {
         } catch (Exception e) {
             logger.error("ProducerSocketHandler.handleTextMessage() is bad. " + e.getMessage());
         }
-
     }
 }
