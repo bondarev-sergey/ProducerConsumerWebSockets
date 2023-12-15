@@ -1,8 +1,9 @@
-package com.example.ProducerConsumer;
+package com.example.ProducerConsumer.handler;
 
 import com.example.ProducerConsumer.model.UserAudit;
 import com.example.ProducerConsumer.service.ConsumerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 public class ConsumerSocketHandler extends TextWebSocketHandler {
     private final ConsumerService consumerService;
 
+    @Autowired
     public ConsumerSocketHandler(@Lazy ConsumerService consumerService) {
         this.consumerService = consumerService;
     }

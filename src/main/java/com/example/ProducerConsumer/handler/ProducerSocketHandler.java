@@ -1,10 +1,11 @@
-package com.example.ProducerConsumer;
+package com.example.ProducerConsumer.handler;
 
 import com.example.ProducerConsumer.model.UserAudit;
 import com.example.ProducerConsumer.service.ProducerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
@@ -17,6 +18,7 @@ public class ProducerSocketHandler extends TextWebSocketHandler {
     private static final Logger logger = LoggerFactory.getLogger(ConsumerSocketHandler.class);
     private final ProducerService producerService;
 
+    @Autowired
     public ProducerSocketHandler(@Lazy ProducerService producerService) {
         this.producerService = producerService;
     }
